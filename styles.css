@@ -255,3 +255,65 @@ Benefits Styles
  .sticky-image-container{
     display: none;
  }
+
+  /* 
+========================== 
+Features Styles
+==========================
+ */
+
+ .features-container{
+    padding: 120px 30px;
+ }
+
+ .features-accordion-tab{
+    overflow: hidden;
+ }
+ .features-img-container{
+    width: 100%;
+    margin-bottom: 40px;
+  
+ }
+ .features-image{
+    width: 100%;
+    max-width: 100%;
+ }
+
+ .features-progress-container{
+    margin-bottom: 25px;
+ }
+
+ .features-progress-bar{
+    height: 4px;
+    width: 100%;
+    background: #D0D6E7;
+}
+ 
+.features-complete{
+    height: 100%;
+    width: 33%;
+    background-color: var(--calendio-purple);
+}
+
+.features-title-container{
+    margin-bottom: 20px;
+}
+.features-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--calendio-dark-purple);
+}
+
+.features-description-container{
+    margin-bottom: 20px;
+}
+
+.features-link-container{
+    margin-bottom: 25px;
+}
+.features-link{
+    color: var(--calendio-purple);
+    font-weight: bold;
+    text-decoration: none;
+}
