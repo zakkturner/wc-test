@@ -337,3 +337,91 @@ Features Styles
   font-weight: bold;
   text-decoration: none;
 }
+
+/* 
+========================== 
+Newsletter Styles
+==========================
+ */
+.newsletter-section {
+  background-color: var(--calendio-dark-purple);
+}
+.newsletter-container {
+  padding: 80px 30px;
+}
+.newsletter-title-container {
+  margin-bottom: 40px;
+}
+.newsletter-title {
+  color: #fff;
+  font-size: 40px;
+  margin: 0;
+}
+
+.newsletter-form-group {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px;
+}
+.newsletter-form-input {
+  padding-left: 15px;
+  border: none;
+  color: var(--secondary-text);
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.newsletter-form-submit {
+  padding: 20px 25px;
+  background: var(--calendio-purple);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  flex-grow: 0;
+}
+/* Responsive newsletter */
+@media screen and (min-width) {
+}
+/* 
+========================== 
+Footer Styles
+==========================
+ */
+
+.footer {
+  border-top: 1px solid #434064;
+  background: var(--calendio-dark-purple);
+}
+
+.footer-container {
+  padding: 50px 30px;
+}
+.footer-logo-container {
+  margin-bottom: 40px;
+}
+.footer-nav {
+  margin-bottom: 40px;
+}
+.footer-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-nav-list .nav-item .nav-link {
+  color: #fff;
+  font-weight: 14px;
+
+  text-decoration: none;
+}
+
+.footer-nav-list .nav-item {
+  margin-bottom: 20px;
+}
+
+.copyright-text {
+  color: #ffffff;
+  font-size: 14px;
+}
