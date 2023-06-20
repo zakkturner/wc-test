@@ -277,6 +277,11 @@ Features Styles
 .features-image {
   width: 100%;
   max-width: 100%;
+  display: none;
+}
+
+.features-image.active {
+  display: block;
 }
 
 .features-progress-container {

@@ -1,8 +1,7 @@
 const header = document.querySelector(".header");
 
 const tabs = document.querySelectorAll(".features-accordion-tab");
-const tabPercentage = 100 / tabs.length;
-const featureImage = document.querySelector(".features-image");
+
 let activeTab = null;
 const totalTime = 10000;
 const step = 50;
@@ -34,10 +33,15 @@ function switchToNextTab() {
   const nextIndex = (currentIndex + 1) % tabs.length;
   const nextTab = tabs[nextIndex];
 
-  // Update the image source to the next tab
-  const imageSrc = nextTab.getAttribute("data-image");
-  featureImage.src = imageSrc;
+  const featureImages = document.querySelectorAll(".features-image");
+  featureImages.forEach((image) => {
+    image.classList.remove("active");
+  });
 
+  const selectedImage = document.querySelector(
+    `.features-image:nth-child(${nextIndex + 1})`
+  );
+  selectedImage.classList.add("active");
   activeTab.classList.remove("opened");
   // Reset the progress bar and start the timer for the next tab
   progressBar = nextTab.querySelector(".features-complete");
@@ -47,7 +51,7 @@ function switchToNextTab() {
   startTimer();
 }
 
-tabs.forEach((tab) => {
+tabs.forEach((tab, index) => {
   tab.addEventListener("click", () => {
     if (activeTab === tab) {
       return;
@@ -60,14 +64,44 @@ tabs.forEach((tab) => {
     tab.classList.add("opened");
     activeTab = tab;
 
-    // Update image
-    const imageSrc = tab.getAttribute("data-image");
-    featureImage.src = imageSrc;
+    const featureImages = document.querySelectorAll(".features-image");
+    featureImages.forEach((image) => {
+      image.classList.remove("active");
+    });
+
+    const selectedImage = document.querySelector(
+      `.features-image:nth-child(${index + 1})`
+    );
+    selectedImage.classList.add("active");
 
     progressBar = tab.querySelector(".features-complete");
     startTimer();
   });
 });
+
+function makeFirstTabActiveOnScroll() {
+  const firstTab = tabs[0];
+  const featuresSection = document.querySelector(".feature-section");
+  const featuresSectionTop = featuresSection.offsetTop;
+  const featureImage = document.querySelector(".features-image");
+  function handleScroll() {
+    const scrollPos = window.scrollY;
+
+    if (scrollPos >= featuresSectionTop && !activeTab) {
+      firstTab.classList.add("opened");
+      featureImage.classList.add("active");
+      activeTab = firstTab;
+      progressBar = firstTab.querySelector(".features-complete");
+      startTimer();
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+}
+
+makeFirstTabActiveOnScroll();
+
 // Scroll Animation
 window.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
