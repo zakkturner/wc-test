@@ -32,6 +32,7 @@ Header styles
   position: -webkit-sticky;
   top: 0;
   transition: background-color 0.3s, position 0.3s;
+  z-index: 999;
   /* padding: 25px 30px; */
 }
 .desktop-nav-container {
@@ -259,7 +260,48 @@ Benefits Styles
 .sticky-image-container {
   display: none;
 }
+/* Responsive Benefits */
 
+@media screen and (min-width: 1024px) {
+  .benefits-container {
+    padding: 120px 380px;
+    display: flex;
+  }
+
+  .benefit-content-container {
+    padding-right: 150px;
+    margin-bottom: 200px;
+  }
+
+  .benefit-image-container {
+    display: none;
+  }
+
+  .sticky-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 20%;
+    /* transform: translateY(-20%); */
+    height: 100%;
+  }
+
+  .sticky-image {
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+    width: 560px;
+  }
+
+  .sticky-image.show-image {
+    opacity: 1;
+    height: 100%;
+    display: block;
+  }
+}
 /* 
 ========================== 
 Features Styles
@@ -282,6 +324,9 @@ Features Styles
 
 .features-image.active {
   display: block;
+}
+.features-accordion-container {
+  border-bottom: 1px solid #d0d6e7;
 }
 
 .features-progress-container {
@@ -338,6 +383,17 @@ Features Styles
   text-decoration: none;
 }
 
+/* Features Responsive */
+
+@media screen and (min-width: 1024px) {
+  .features-container {
+    display: grid;
+    padding: 120px 380px 126px;
+    grid-template-columns: 1fr 440px;
+    gap: 0px 40px;
+  }
+}
+
 /* 
 ========================== 
 Newsletter Styles
@@ -382,7 +438,24 @@ Newsletter Styles
   flex-grow: 0;
 }
 /* Responsive newsletter */
-@media screen and (min-width) {
+
+@media screen and (min-width: 1024px) {
+  .newsletter-container {
+    display: grid;
+    max-width: 1400px;
+    grid-template-columns: 1fr 1fr;
+    /* padding: 76px 260px; */
+    gap: 0 166px;
+    margin: 76px auto;
+    padding: 0;
+    align-items: center;
+  }
+  .newsletter-title-container {
+    margin-bottom: 0;
+  }
+  .newsletter-title {
+    white-space: nowrap;
+  }
 }
 /* 
 ========================== 
@@ -424,4 +497,32 @@ Footer Styles
 .copyright-text {
   color: #ffffff;
   font-size: 14px;
+}
+
+/* Responsive footer */
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    border-top: none;
+  }
+  .footer-container {
+    display: grid;
+    grid-template-columns: 113px 1fr 245px;
+    margin: 0 260px;
+    align-items: center;
+    padding: 25px 0;
+  }
+  .footer-logo-container {
+    margin-bottom: 0;
+  }
+  .footer-nav {
+    margin-bottom: 0;
+  }
+  .footer-nav-list {
+    display: flex;
+    margin-left: 80px;
+  }
+  .footer-nav-list .nav-item {
+    margin-bottom: 0;
+  }
 }

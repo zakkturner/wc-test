@@ -112,3 +112,36 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+
+// Benefits sticky image functionality
+const stickyImages = document.querySelectorAll(".sticky-image");
+const benefitContainers = document.querySelectorAll(".benefit-container");
+const imageStates = Array.from({ length: stickyImages.length }).fill(false);
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  benefitContainers.forEach((container, index) => {
+    const rect = container.getBoundingClientRect();
+    const containerTop = rect.top + scrollTop;
+    const containerBottom = rect.bottom + scrollTop;
+    const offset = window.innerHeight * 0.5; // Adjust the offset as needed
+
+    if (
+      containerTop <= scrollTop + offset &&
+      containerBottom >= scrollTop + offset
+    ) {
+      if (!imageStates[index]) {
+        stickyImages.forEach((image) => {
+          image.classList.remove("show-image");
+        });
+
+        stickyImages[index].classList.add("show-image");
+        imageStates.fill(false);
+        imageStates[index] = true;
+      }
+    }
+  });
+});
+
+window.dispatchEvent(new Event("scroll"));
