@@ -207,8 +207,49 @@ Hero styles
   transform: scale(1, 1);
 }
 .cta-demo-btn {
-  background: var(--calendio-indigo);
+  /* background: var(--calendio-indigo); */
+  position: relative;
+  color: #fff;
 }
+.cta-demo-btn:hover {
+    color: var(--calendio-indigo);
+  }
+  .cta-demo-btn span {
+    position: relative;
+    z-index: 2;
+  }
+  .cta-demo-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--calendio-indigo);
+    transition: all 0.3s;
+  }
+  .cta-demo-btn:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  .cta-demo-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid var(--calendio-indigo);
+    transform: scale(1.2, 1.2);
+  }
+  .cta-demo-btn:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
 
 /* Responsive Hero Styles */
 @media screen and (min-width: 1024px) {
