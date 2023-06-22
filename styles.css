@@ -163,8 +163,48 @@ Hero styles
   font-size: 18px;
 }
 .cta-trial-btn {
-  background: var(--calendio-purple);
   margin-bottom: 30px;
+  position: relative;
+  color: #fff;
+}
+.cta-trial-btn:hover {
+  color: var(--calendio-purple);
+}
+.cta-trial-btn span {
+  position: relative;
+  z-index: 2;
+}
+.cta-trial-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--calendio-purple);
+  transition: all 0.3s;
+}
+.cta-trial-btn:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.cta-trial-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid var(--calendio-purple);
+  transform: scale(1.2, 1.2);
+}
+.cta-trial-btn:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 .cta-demo-btn {
   background: var(--calendio-indigo);
@@ -278,13 +318,14 @@ Benefits Styles
   .benefits-container {
     padding: 120px 0px;
     display: flex;
+    justify-content: space-between;
     max-width: 1160px;
     margin: 0 auto;
     padding-inline: 30px;
   }
 
   .benefit-content-container {
-    padding-right: 150px;
+    max-width: 440px;
     margin-bottom: 340px;
   }
 
@@ -300,14 +341,20 @@ Benefits Styles
     position: sticky;
     top: 20%;
     /* transform: translateY(-20%); */
-    height: 100%;
+    height: 480px;
+    width: 560px;
   }
 
   .sticky-image {
-    height: 100%;
+    height: auto;
+    width: 100%;
+    /* display: none; */
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    scale: 0.4;
+    top: 0;
     width: 560px;
   }
 
@@ -315,6 +362,8 @@ Benefits Styles
     opacity: 1;
     height: 100%;
     display: block;
+    visibility: visible;
+    scale: 1;
   }
 }
 /* 
