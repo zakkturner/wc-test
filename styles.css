@@ -425,6 +425,7 @@ Features Styles
   width: 100%;
   max-width: 680px;
   display: none;
+  margin: 0 auto;
 }
 
 .features-image.active {
@@ -547,7 +548,7 @@ Newsletter Styles
 }
 /* Responsive newsletter */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .newsletter-container {
     display: grid;
     max-width: 1400px;
@@ -578,6 +579,7 @@ Footer Styles
 
 .footer-container {
   padding: 50px 30px;
+  max-width: 1400px;
 }
 .footer-logo-container {
   margin-bottom: 40px;
@@ -609,14 +611,14 @@ Footer Styles
 
 /* Responsive footer */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .footer {
     border-top: none;
   }
   .footer-container {
     display: grid;
     grid-template-columns: 113px 1fr 245px;
-    margin: 0 260px;
+    margin: 0 auto;
     align-items: center;
     padding: 25px 0;
   }
