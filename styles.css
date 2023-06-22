@@ -21,6 +21,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+button {
+  cursor: pointer;
+}
 /* 
 ========================== 
 Header styles
@@ -35,16 +38,16 @@ Header styles
   z-index: 999;
   /* padding: 25px 30px; */
 }
+.header-container {
+  display: flex;
+  padding: 25px 30px;
+  justify-content: space-between;
+}
 .desktop-nav-container {
   display: none;
 }
 .scrolled {
   background-color: white;
-}
-.header-container {
-  display: flex;
-  padding: 25px 30px;
-  justify-content: space-between;
 }
 
 .mobile-hamburger-icon {
@@ -55,10 +58,13 @@ Header styles
 }
 
 /* Responsive Header Styles */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .header-container {
-    padding: 25px 260px;
+    padding: 25px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
+
   .header-logo-container {
     margin-right: 80px;
   }
@@ -169,7 +175,10 @@ Hero styles
   .hero-container {
     display: flex;
     justify-content: space-between;
-    margin-inline: 260px;
+    margin-inline: 0px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: 30px;
   }
   .hero-content-container {
     width: 560px;
@@ -215,7 +224,8 @@ Partners styles
 @media screen and (min-width: 1024px) {
   .partners-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    padding-inline: 260px;
+    padding-inline: 0px;
+    max-width: 1400px;
   }
 }
 
@@ -252,6 +262,8 @@ Benefits Styles
 
 .benefit-image-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .benefit-image {
   max-width: 100%;
@@ -264,13 +276,16 @@ Benefits Styles
 
 @media screen and (min-width: 1024px) {
   .benefits-container {
-    padding: 120px 380px;
+    padding: 120px 0px;
     display: flex;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-inline: 30px;
   }
 
   .benefit-content-container {
     padding-right: 150px;
-    margin-bottom: 200px;
+    margin-bottom: 340px;
   }
 
   .benefit-image-container {
@@ -318,7 +333,7 @@ Features Styles
 }
 .features-image {
   width: 100%;
-  max-width: 100%;
+  max-width: 680px;
   display: none;
 }
 
@@ -388,9 +403,12 @@ Features Styles
 @media screen and (min-width: 1024px) {
   .features-container {
     display: grid;
-    padding: 120px 380px 126px;
+    padding: 120px 0px 126px;
     grid-template-columns: 1fr 440px;
     gap: 0px 40px;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-inline: 30px;
   }
 }
 
