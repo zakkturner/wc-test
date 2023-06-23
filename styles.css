@@ -547,7 +547,15 @@ Newsletter Styles
   flex-grow: 0;
 }
 /* Responsive newsletter */
-
+@media screen and (max-width: 432px) {
+    .newsletter-form-input{
+        font-size: 12px;
+        padding-left: 2px;
+    }
+    .newsletter-form-submit{
+        padding: 15px 18px;
+    }
+}
 @media screen and (min-width: 1440px) {
   .newsletter-container {
     display: grid;
